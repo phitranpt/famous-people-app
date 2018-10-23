@@ -22,6 +22,12 @@ handleChangefor = (propertyName) => {
   }
 }
 
+submitBtn = (event) => {
+  console.log('btn clicked');
+  console.log(this.state.person.name);
+  console.log(this.state);
+}
+
   render() {
     return (
       <div className="App">
@@ -31,7 +37,8 @@ handleChangefor = (propertyName) => {
           </header>
           <section>
             <input onChange={this.handleChangefor('name')} placeholder="name" /><br></br>
-            <input onChange={this.handleChangefor('role')} placeholder="role" />
+            <input onChange={this.handleChangefor('role')} placeholder="role" /><br></br>
+            <button onClick={this.submitBtn}>Submit</button>
             <p>{this.state.person.name} is famous for {this.state.person.role}</p>
           </section>
       </div>
