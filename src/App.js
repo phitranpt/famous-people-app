@@ -3,23 +3,37 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+state = {
+  person: {
+    name: 'Phi',
+    role: 'Prime Student'
+  },
+}
+
+handleChangefor = (propertyName) => {
+  return (event) => {
+    this.setState ({
+      person: {
+        ...this.state.person,
+        [propertyName]: event.target.value
+      }
+    })
+  }
+}
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
+          <h1>Famous People</h1>
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+          </header>
+          <section>
+            <input onChange={this.handleChangefor('name')} placeholder="name" /><br></br>
+            <input onChange={this.handleChangefor('role')} placeholder="role" />
+            <p>{this.state.person.name} is famous for {this.state.person.role}</p>
+          </section>
       </div>
     );
   }
