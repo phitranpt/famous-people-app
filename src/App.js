@@ -11,16 +11,14 @@ state = {
   },
 }
 
-handleChangefor = (propertyName) => {
-  return (event) => {
+handleChangeFor = propertyName => event => {
     this.setState ({
       person: {
         ...this.state.person,
         [propertyName]: event.target.value
       }
-    })
+    });
   }
-}
 
 submitBtn = (event) => {
   console.log('btn clicked');
@@ -36,8 +34,8 @@ submitBtn = (event) => {
           <img src={logo} className="App-logo" alt="logo" />
           </header>
           <section>
-            <input onChange={this.handleChangefor('name')} placeholder="name" /><br></br>
-            <input onChange={this.handleChangefor('role')} placeholder="role" /><br></br>
+            <input onChange={this.handleChangeFor('name')} placeholder="name" /><br></br>
+            <input onChange={this.handleChangeFor('role')} placeholder="role" /><br></br>
             <button onClick={this.submitBtn}>Submit</button>
             <p>{this.state.person.name} is famous for {this.state.person.role}</p>
           </section>
