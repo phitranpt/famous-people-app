@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Header from '..Header/Header';
 import './App.css';
+import Header from '../Header/Header';
+import PeopleForm from '../Form/PeopleForm';
+import PeopleList from '../List/PeopleList';
 
 class App extends Component {
 
@@ -36,17 +38,11 @@ submitBtn = (event) => {
   render() {
     return (
       <div>>
-        <header />
-          <form submitBtn={this.submitBtn} 
-          handleChangeFor={this.handleChangeFor} 
-          peopleList={this.state.peopleList} />
-          <peopleList list={this.state.peopleList} />
-
-
-            <input onChange={this.handleChangeFor('name')} placeholder="name" /><br></br>
-            <input onChange={this.handleChangeFor('role')} placeholder="role" /><br></br>
-            <button onClick={this.submitBtn}>Submit</button>
-            <p>{this.state.person.name} is famous for {this.state.person.role}</p>
+        <Header />
+          <PeopleForm submitBtn={this.submitBtn} 
+            handleChangeFor={this.handleChangeFor} 
+            peopleList={this.state.peopleList} />
+          <PeopleList list={this.state.peopleList} />
       </div>
     );
   }
