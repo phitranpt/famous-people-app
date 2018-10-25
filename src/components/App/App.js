@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from '../Header/Header';
-import PeopleForm from '../Form/PeopleForm';
-import PeopleList from '../List/PeopleList';
+import FamousPeopleForm from '../FamousPeopleForm/FamousPeopleForm';
+import FamousPersonList from '../FamousPersonList/FamousPersonList';
 
 class App extends Component {
 
@@ -11,7 +11,7 @@ state = {
     name: 'Phi',
     role: 'Prime Student'
   },
-  peopleList = [],
+  peopleList: [],
 }
 
 handleChangeFor = propertyName => event => {
@@ -24,25 +24,27 @@ handleChangeFor = propertyName => event => {
   }
 
 submitBtn = (event) => {
+  event.preventDefault();
   console.log('button works!');
   console.log('saving new person', this.state.person);
+  
   this.setState({
     person: {
       name: '',
       role: '',
     },
-    peopleList: [...this.state.person, this.state.person], 
+    peopleList: [...this.state.peopleList, this.state.person], 
   })
 }
 
   render() {
     return (
-      <div>>
+      <div className="App">>
         <Header />
-          <PeopleForm submitBtn={this.submitBtn} 
+          <FamousPeopleForm submitBtn={this.submitBtn} 
             handleChangeFor={this.handleChangeFor} 
-            peopleList={this.state.peopleList} />
-          <PeopleList list={this.state.peopleList} />
+            person={this.state.person} />
+          <FamousPersonList list={this.state.peopleList} />
       </div>
     );
   }

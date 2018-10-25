@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class PeopleList extends Component {
+class FamousPersonList extends Component {
 
   render() {
     return (
@@ -16,4 +16,4 @@ class PeopleList extends Component {
   }
 }
 
-export default PeopleList;
+export default FamousPersonList;
