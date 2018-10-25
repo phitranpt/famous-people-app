@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class FamousPeopleForm extends Component {
+class FamousPersonForm extends Component {
 
   render() {
     return (
@@ -20,4 +20,4 @@ class FamousPeopleForm extends Component {
   }
 }
 
-export default FamousPeopleForm;
+export default FamousPersonForm;

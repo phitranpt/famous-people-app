@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from '../Header/Header';
-import FamousPeopleForm from '../FamousPeopleForm/FamousPeopleForm';
+import FamousPersonForm from '../FamousPersonForm/FamousPersonForm';
 import FamousPersonList from '../FamousPersonList/FamousPersonList';
 
 class App extends Component {
@@ -41,7 +41,7 @@ submitBtn = (event) => {
     return (
       <div className="App">>
         <Header />
-          <FamousPeopleForm submitBtn={this.submitBtn} 
+          <FamousPersonForm submitBtn={this.submitBtn} 
             handleChangeFor={this.handleChangeFor} 
             person={this.state.person} />
           <FamousPersonList list={this.state.peopleList} />
