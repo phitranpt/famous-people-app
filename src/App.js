@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Header from '..Header/Header';
 import './App.css';
 
 class App extends Component {
@@ -9,6 +9,7 @@ state = {
     name: 'Phi',
     role: 'Prime Student'
   },
+  peopleList = [],
 }
 
 handleChangeFor = propertyName => event => {
@@ -21,18 +22,20 @@ handleChangeFor = propertyName => event => {
   }
 
 submitBtn = (event) => {
-  console.log('btn clicked');
-  console.log(this.state.person.name);
-  console.log(this.state);
+  console.log('button works!');
+  console.log('saving new person', this.state.person);
+  this.setState({
+    person: {
+      name: '',
+      role: '',
+    },
+    peopleList: [...this.state.person, this.state.person], 
+  })
 }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1>Famous People</h1>
-          <img src={logo} className="App-logo" alt="logo" />
-          </header>
           <section>
             <input onChange={this.handleChangeFor('name')} placeholder="name" /><br></br>
             <input onChange={this.handleChangeFor('role')} placeholder="role" /><br></br>
