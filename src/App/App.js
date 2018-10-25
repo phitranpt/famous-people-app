@@ -35,13 +35,18 @@ submitBtn = (event) => {
 
   render() {
     return (
-      <div className="App">
-          <section>
+      <div>>
+        <header />
+          <form submitBtn={this.submitBtn} 
+          handleChangeFor={this.handleChangeFor} 
+          peopleList={this.state.peopleList} />
+          <peopleList list={this.state.peopleList} />
+
+
             <input onChange={this.handleChangeFor('name')} placeholder="name" /><br></br>
             <input onChange={this.handleChangeFor('role')} placeholder="role" /><br></br>
             <button onClick={this.submitBtn}>Submit</button>
             <p>{this.state.person.name} is famous for {this.state.person.role}</p>
-          </section>
       </div>
     );
   }
